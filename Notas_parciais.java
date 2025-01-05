@@ -11,7 +11,7 @@ public class Notas_parciais {
 
         for(int i = 0; i < notas.length; i++){
 
-            nota_a_colocar = Double.parseDouble(JOptionPane.showInputDialog("Coloque a" + (i + 1)+"º nota."));
+            nota_a_colocar = Double.parseDouble(JOptionPane.showInputDialog("Coloque a " + (i + 1)+"º nota."));
 
             if(nota_a_colocar >= 0 && nota_a_colocar <= 10){
 
