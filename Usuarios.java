@@ -39,15 +39,15 @@ public class Usuarios {
                     break;
 
                 case 3:
-                    cadastrar_nome();
+                    editar_nome();
                     break;
 
                 case 4:
-                    cadastrar_nome();
+                    pesquisar_nome();
                     break;
 
                 case 5:
-                    cadastrar_nome();
+                    listar_nomes();
                     break;
 
                 case 0:
@@ -82,5 +82,40 @@ public class Usuarios {
 
             JOptionPane.showMessageDialog(null, "Nome não cadastrado!");
         };
+    };
+
+    private static void editar_nome(){
+
+        String resposta = JOptionPane.showInputDialog("Digite qual nome deseja editar");
+
+        if(nomes_cadastrados.contains(resposta)){
+
+           int i = nomes_cadastrados.indexOf(resposta);
+           nomes_cadastrados.set(i, resposta);
+
+           JOptionPane.showMessageDialog(null, "Nome editado com sucesso!");
+        } else {
+
+            JOptionPane.showMessageDialog(null, "Nome não cadastrado!");
+        };
+    };
+
+    private static void pesquisar_nome(){
+
+        String resposta = JOptionPane.showInputDialog("Digite um nome para saber se ele está cadastrado:");
+
+        if(nomes_cadastrados.contains(resposta)){
+
+            JOptionPane.showMessageDialog(null, "Nome cadastrado!");
+
+        } else {
+
+            JOptionPane.showMessageDialog(null, "Nome não cadastrado!");
+        };
+    };
+
+    private static void listar_nomes(){
+
+        JOptionPane.showMessageDialog(null, "Nomes cadastrados: "+ nomes_cadastrados.toString());
     };
 }
