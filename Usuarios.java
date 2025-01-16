@@ -90,8 +90,10 @@ public class Usuarios {
 
         if(nomes_cadastrados.contains(resposta)){
 
+            String novo_nome = JOptionPane.showInputDialog("Digite qual será o novo nome:");
+
            int i = nomes_cadastrados.indexOf(resposta);
-           nomes_cadastrados.set(i, resposta);
+           nomes_cadastrados.set(i, novo_nome);
 
            JOptionPane.showMessageDialog(null, "Nome editado com sucesso!");
         } else {
