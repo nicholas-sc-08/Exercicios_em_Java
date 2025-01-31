@@ -17,4 +17,9 @@ public class Pessoa{
 
         JOptionPane.showMessageDialog(null, "Nome: "+nome+"\nIdade: "+idade);
     };
+
+    void chegada_de_pessoas(){
+
+        JOptionPane.showMessageDialog(null, nome+" "+idade+" Chegou!");
+    };
 }
