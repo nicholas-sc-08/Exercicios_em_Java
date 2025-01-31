@@ -14,7 +14,7 @@ public class Fila{
 // fila, caso não seja criança, vai para o final da fila. Ao final, 
 // mostrar a fila com os nomes.
 
-// Exemplo: João, 60 anos, chegou. Astrogildo, 67 anos chegou. 
+//Exemplo: João, 60 anos, chegou. Astrogildo, 67 anos chegou. 
 //Alícia, 9 anos, chegou. Enzo, 10 anos, chegou. 
 //Suzana, 25 anos, chegou.
 // Fila: Enzo, Alícia, João, Astrogildo, Suzana
@@ -25,16 +25,37 @@ public class Fila{
 // (1,0) Adicionar no local correto (início ou fim) da fila. 
 // (0,5) Mostrar a lista completa com os nomes.
 
-        public static void main(String[] args){
+    public static ArrayList<Pessoa> pessoas = new ArrayList<>();
+
+    public static void main(String[] args){
 
         JOptionPane.showMessageDialog(null, "Seja bem-vindo(a)!");
 
+        for(int i = 0; i < 10; i++){
+        
         String nome_pessoa = JOptionPane.showInputDialog("Favor digite seu nome:");
 
         int idade_pessoa = Integer.parseInt(JOptionPane.showInputDialog("Favor digite sua idade:"));
-
+        
         Pessoa nova_pessoa = new Pessoa(nome_pessoa, idade_pessoa);
         
-        nova_pessoa.mostrar_informacoes();
+        if(idade_pessoa < 12){
+            
+            pessoas.add(0, nova_pessoa);
+
+            nova_pessoa.chegada_de_pessoas();
+
+        } else {
+
+            pessoas.add(nova_pessoa);
+
+            nova_pessoa.chegada_de_pessoas();
         };
+        };
+
+        for(Pessoa pessoa : pessoas){
+
+            pessoa.mostrar_informacoes();
+        };      
+    };
 }
