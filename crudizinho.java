@@ -12,24 +12,13 @@ public class crudizinho{
         String nova_idade = JOptionPane.showInputDialog("Insira a idade de usuário: ");
         String novo_email = JOptionPane.showInputDialog("Insira seu email: ");
 
-        for(clientela cliente : vetor_clientes){
-
-            if(cliente.email.equals(novo_email)){
-
-                JOptionPane.showMessageDialog(null, "Email já cadastrado!");
-                return;
-            
-            } else {
-
-                clientela novo_cliente = new clientela(novo_nome, Integer.parseInt(nova_idade), novo_email);
-                vetor_clientes.add(novo_cliente);
-            };
-        };
+        clientela novo_cliente = new clientela(novo_nome, Integer.parseInt(nova_idade), novo_email);
+        vetor_clientes.add(novo_cliente);
     };
 
-    public static void editar(){
+    public static void exibir(){
 
-
+        JOptionPane.showMessageDialog(null, "Clientela cadastrada: "+ vetor_clientes.toString());
     };
 
     public static void atualizar(){
@@ -48,7 +37,7 @@ public class crudizinho{
 
         while(!fim_do_crudizinho){
 
-           String opcao_selecionada = JOptionPane.showInputDialog("1) Cadastrar\n2) Editar\n3) Atualizar\n4) Excluir\n4) Excluir\n5) Sair");
+           String opcao_selecionada = JOptionPane.showInputDialog("1) Cadastrar\n2) exibir\n3) Atualizar\n4) Excluir\n5) Sair");
 
             switch(opcao_selecionada){
 
@@ -59,7 +48,7 @@ public class crudizinho{
 
                 case "2":
 
-                editar();
+                exibir();
                 break;
 
                 case "3":
